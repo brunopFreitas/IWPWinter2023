@@ -27,9 +27,9 @@ public class Movie
 
     public int? LangID {get; set;}
     [ForeignKey("LangID")]
-    public Language Language {get; set;}
+    public Language? Language {get; set;}
 
     public int? GenreID {get; set;}
     [ForeignKey("GenreID")]
-    public Genre Genre {get; set;}
+    public Genre? Genre {get; set;}
 }

@@ -10896,11 +10896,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/nsccstudent/Documents/git/WEBD3000/lab1-brunopFreitas/RazorPagesMovie/RazorPagesMovie.csproj",
+      "projectUniqueName": "/home/nsccstudent/Documents/git/IWPWinter2023/WEBD3000/RazorPagesMovie/RazorPagesMovie.csproj",
       "projectName": "RazorPagesMovie",
-      "projectPath": "/home/nsccstudent/Documents/git/WEBD3000/lab1-brunopFreitas/RazorPagesMovie/RazorPagesMovie.csproj",
+      "projectPath": "/home/nsccstudent/Documents/git/IWPWinter2023/WEBD3000/RazorPagesMovie/RazorPagesMovie.csproj",
       "packagesPath": "/home/nsccstudent/.nuget/packages/",
-      "outputPath": "/home/nsccstudent/Documents/git/WEBD3000/lab1-brunopFreitas/RazorPagesMovie/obj/",
+      "outputPath": "/home/nsccstudent/Documents/git/IWPWinter2023/WEBD3000/RazorPagesMovie/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/nsccstudent/.nuget/NuGet/NuGet.Config"

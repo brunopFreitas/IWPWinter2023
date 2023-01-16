@@ -11,6 +11,7 @@ if (builder.Environment.IsDevelopment())
 {
     builder.Services.AddDbContext<RazorPagesMovieContext>(options =>
         options.UseSqlite(builder.Configuration.GetConnectionString("RazorPagesMovieContext")));
+        // Replace this line to connect to sql server
 }
 else
 {
