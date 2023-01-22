@@ -10,13 +10,13 @@ builder.Services.AddRazorPages();
 if (builder.Environment.IsDevelopment())
 {
     builder.Services.AddDbContext<RazorPagesMovieContext>(options =>
-        options.UseSqlite(builder.Configuration.GetConnectionString("RazorPagesMovieContext")));
+        options.UseSqlServer(builder.Configuration.GetConnectionString("RazorPagesMovieContextSQLServer")));
 }
-else
-{
-    builder.Services.AddDbContext<RazorPagesMovieContext>(options =>
-        options.UseSqlServer(builder.Configuration.GetConnectionString("ProductionMovieContext")));
-}
+// else
+// {
+//     builder.Services.AddDbContext<RazorPagesMovieContext>(options =>
+//         options.UseSqlServer(builder.Configuration.GetConnectionString("ProductionMovieContext")));
+// }
 
 // builder.Services.AddDbContext<RazorPagesMovieContext>(options =>
 //     options.UseSqlServer(builder.Configuration.GetConnectionString("RazorPagesMovieContext") ?? throw new InvalidOperationException("Connection string 'RazorPagesMovieContext' not found.")));

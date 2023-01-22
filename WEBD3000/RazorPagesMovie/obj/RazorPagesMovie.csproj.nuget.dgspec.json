@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/nsccstudent/Documents/git/WEBD3000/lab1-brunopFreitas/RazorPagesMovie/RazorPagesMovie.csproj": {}
+    "E:\\NSCC\\repo\\IWPWinter2023\\WEBD3000\\RazorPagesMovie\\RazorPagesMovie.csproj": {}
   },
   "projects": {
-    "/home/nsccstudent/Documents/git/WEBD3000/lab1-brunopFreitas/RazorPagesMovie/RazorPagesMovie.csproj": {
+    "E:\\NSCC\\repo\\IWPWinter2023\\WEBD3000\\RazorPagesMovie\\RazorPagesMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/nsccstudent/Documents/git/WEBD3000/lab1-brunopFreitas/RazorPagesMovie/RazorPagesMovie.csproj",
+        "projectUniqueName": "E:\\NSCC\\repo\\IWPWinter2023\\WEBD3000\\RazorPagesMovie\\RazorPagesMovie.csproj",
         "projectName": "RazorPagesMovie",
-        "projectPath": "/home/nsccstudent/Documents/git/WEBD3000/lab1-brunopFreitas/RazorPagesMovie/RazorPagesMovie.csproj",
-        "packagesPath": "/home/nsccstudent/.nuget/packages/",
-        "outputPath": "/home/nsccstudent/Documents/git/WEBD3000/lab1-brunopFreitas/RazorPagesMovie/obj/",
+        "projectPath": "E:\\NSCC\\repo\\IWPWinter2023\\WEBD3000\\RazorPagesMovie\\RazorPagesMovie.csproj",
+        "packagesPath": "C:\\Users\\Bruno\\.nuget\\packages\\",
+        "outputPath": "E:\\NSCC\\repo\\IWPWinter2023\\WEBD3000\\RazorPagesMovie\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/nsccstudent/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Bruno\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -76,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/nsccstudent/.dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

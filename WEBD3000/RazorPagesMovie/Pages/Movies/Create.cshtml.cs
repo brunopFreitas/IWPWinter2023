@@ -21,6 +21,8 @@ namespace RazorPagesMovie.Pages.Movies
 
         public IActionResult OnGet()
         {
+        ViewData["GenreID"] = new SelectList(_context.Genre.OrderBy(g => g.Name), "Id", "Name");
+        ViewData["LangID"] = new SelectList(_context.Language.OrderBy(l => l.Name), "Id", "Name");
             return Page();
         }
 

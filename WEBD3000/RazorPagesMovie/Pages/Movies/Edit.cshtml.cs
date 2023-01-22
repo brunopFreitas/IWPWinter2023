@@ -36,6 +36,8 @@ namespace RazorPagesMovie.Pages.Movies
                 return NotFound();
             }
             Movie = movie;
+           ViewData["GenreID"] = new SelectList(_context.Genre, "Id", "Name");
+           ViewData["LangID"] = new SelectList(_context.Language, "Id", "Name");
             return Page();
         }
 
