@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "E:\\NSCC\\repo\\IWPWinter2023\\WEBD3000\\RazorPagesMovie\\RazorPagesMovie.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "E:\\NSCC\\repo\\IWPWinter2023\\WEBD3000\\RazorPagesMovie\\RazorPagesMovie.csproj",
         "packagesPath": "C:\\Users\\Bruno\\.nuget\\packages\\",
         "outputPath": "E:\\NSCC\\repo\\IWPWinter2023\\WEBD3000\\RazorPagesMovie\\obj\\",
+=======
+    "/home/nsccstudent/Documents/git/IWPWinter2023/WEBD3000/RazorPagesMovie/RazorPagesMovie.csproj": {}
+  },
+  "projects": {
+    "/home/nsccstudent/Documents/git/IWPWinter2023/WEBD3000/RazorPagesMovie/RazorPagesMovie.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/nsccstudent/Documents/git/IWPWinter2023/WEBD3000/RazorPagesMovie/RazorPagesMovie.csproj",
+        "projectName": "RazorPagesMovie",
+        "projectPath": "/home/nsccstudent/Documents/git/IWPWinter2023/WEBD3000/RazorPagesMovie/RazorPagesMovie.csproj",
+        "packagesPath": "/home/nsccstudent/.nuget/packages/",
+        "outputPath": "/home/nsccstudent/Documents/git/IWPWinter2023/WEBD3000/RazorPagesMovie/obj/",
+>>>>>>> a01aa201e5dee351553bb10d34691aa86a6d2e8a
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bruno\\AppData\\Roaming\\NuGet\\NuGet.Config"

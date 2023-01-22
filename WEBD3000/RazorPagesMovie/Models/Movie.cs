@@ -28,10 +28,10 @@ public class Movie
     [Display(Name = "Language")]
     public int? LangID {get; set;}
     [ForeignKey("LangID")]
-    public Language Language {get; set;}
+    public Language? Language {get; set;}
 
     [Display(Name = "Genre")]
     public int? GenreID {get; set;}
     [ForeignKey("GenreID")]
-    public Genre Genre {get; set;}
+    public Genre? Genre {get; set;}
 }

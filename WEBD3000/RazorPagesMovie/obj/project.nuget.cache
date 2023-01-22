@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "CWyMSh7nC24NuRkHJrGXxa16fq9OIpwDRFDUHD/MXAcXFcZqgEcbv3+Iyuy0viAbfzpsgn6A1eptNg5VO67VbQ==",
   "success": true,
   "projectFilePath": "E:\\NSCC\\repo\\IWPWinter2023\\WEBD3000\\RazorPagesMovie\\RazorPagesMovie.csproj",
+=======
+  "dgSpecHash": "/vpgfPdaZaAXQ5Wwe7sfyiW9SxHDrDHerbrK46yDSlLLe/bFTjvrBNgXN+CZAOeUiL+CXh5NkVfWoC6xsxwRmg==",
+  "success": true,
+  "projectFilePath": "/home/nsccstudent/Documents/git/IWPWinter2023/WEBD3000/RazorPagesMovie/RazorPagesMovie.csproj",
+>>>>>>> a01aa201e5dee351553bb10d34691aa86a6d2e8a
   "expectedPackageFiles": [
     "C:\\Users\\Bruno\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Bruno\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
