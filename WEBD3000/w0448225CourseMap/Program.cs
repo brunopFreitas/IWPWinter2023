@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using w0448225CourseMap.Data;
+using w0448225CourseMap.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,11 @@ else
 }
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope()) {
+    var services = scope.ServiceProvider;
+    SeedData.Initialize(services);
+}
 
 if (!app.Environment.IsDevelopment())
 {
