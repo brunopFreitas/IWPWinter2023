@@ -151,15 +151,15 @@ namespace w0448225CourseMap.Migrations
 
                     b.Property<string>("CourseCode")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Title")
+                    b.HasIndex("CourseCode")
                         .IsUnique();
 
                     b.ToTable("Courses");

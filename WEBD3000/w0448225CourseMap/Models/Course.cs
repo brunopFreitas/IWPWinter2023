@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace w0448225CourseMap.Models;
 
-[Index(nameof(Course.Title), IsUnique = true)]
+[Index(nameof(Course.CourseCode), IsUnique = true)]
 [Table("Courses")]
 public class Course {
 

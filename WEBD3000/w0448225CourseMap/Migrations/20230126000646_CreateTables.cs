@@ -47,8 +47,8 @@ namespace w0448225CourseMap.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CourseCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Title = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    CourseCode = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -353,9 +353,9 @@ namespace w0448225CourseMap.Migrations
                 column: "PrerequisiteId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Courses_Title",
+                name: "IX_Courses_CourseCode",
                 table: "Courses",
-                column: "Title",
+                column: "CourseCode",
                 unique: true);
 
             migrationBuilder.CreateIndex(

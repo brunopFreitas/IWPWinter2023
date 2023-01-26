@@ -12,7 +12,7 @@ using w0448225CourseMap.Data;
 namespace w0448225CourseMap.Migrations
 {
     [DbContext(typeof(w0448225CourseMapContext))]
-    [Migration("20230125233003_CreateTables")]
+    [Migration("20230126000646_CreateTables")]
     partial class CreateTables
     {
         /// <inheritdoc />
@@ -154,15 +154,15 @@ namespace w0448225CourseMap.Migrations
 
                     b.Property<string>("CourseCode")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Title")
+                    b.HasIndex("CourseCode")
                         .IsUnique();
 
                     b.ToTable("Courses");
