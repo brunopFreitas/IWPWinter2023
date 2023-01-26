@@ -88,3 +88,14 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+// Add in class
+var https = require('https');
+var fs = require('fs')
+
+const options = {
+  key: fs.readFileSync('/home/bruno/Documents/git/IWPWinter2023/ISEC2055/username-password-tutorialserver.key'),
+  cert: fs.readFileSync('/home/bruno/Documents/git/IWPWinter2023/ISEC2055/username-password-tutorial/server.cert')
+};
+
+var server = https.createServer(options, app);
