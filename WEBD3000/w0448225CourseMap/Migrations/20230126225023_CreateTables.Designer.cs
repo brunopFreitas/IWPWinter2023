@@ -12,7 +12,7 @@ using w0448225CourseMap.Data;
 namespace w0448225CourseMap.Migrations
 {
     [DbContext(typeof(w0448225CourseMapContext))]
-    [Migration("20230126000646_CreateTables")]
+    [Migration("20230126225023_CreateTables")]
     partial class CreateTables
     {
         /// <inheritdoc />
