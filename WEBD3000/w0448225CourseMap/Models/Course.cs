@@ -12,9 +12,11 @@ public class Course {
     public int Id { get; set; }
 
     [Required]
+    [RegularExpression(@"^[A-Z]+ [0-9]+$")]
     public string? CourseCode { get; set; }
 
     [Required]
+    [RegularExpression(@"^.{5,100}$")]
     public string? Title { get; set; }    
 
 // Navigation Properties

@@ -12,6 +12,7 @@ public class Diploma {
     public int Id { get; set; }
 
     [Required]
+    [RegularExpression(@"^.{10,}$")]
     public string? Title { get; set; }
 
     

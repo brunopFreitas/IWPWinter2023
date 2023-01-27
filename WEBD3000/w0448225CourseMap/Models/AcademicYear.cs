@@ -12,6 +12,7 @@ public class AcademicYear {
     public int Id { get; set; }
 
     [Required]
+    [RegularExpression(@"^.{5,20}$")]
     public string? Title { get; set; }    
 
 // Navigation Properties
