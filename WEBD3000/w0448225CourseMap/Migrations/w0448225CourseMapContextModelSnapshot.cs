@@ -22,81 +22,6 @@ namespace w0448225CourseMap.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("AcademicYearSemester", b =>
-                {
-                    b.Property<int>("AcademicYearId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("AcademicYearId1")
-                        .HasColumnType("int");
-
-                    b.HasKey("AcademicYearId", "AcademicYearId1");
-
-                    b.HasIndex("AcademicYearId1");
-
-                    b.ToTable("AcademicYearSemester");
-                });
-
-            modelBuilder.Entity("CourseCourseOffering", b =>
-                {
-                    b.Property<int>("CourseId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CourseId1")
-                        .HasColumnType("int");
-
-                    b.HasKey("CourseId", "CourseId1");
-
-                    b.HasIndex("CourseId1");
-
-                    b.ToTable("CourseCourseOffering");
-                });
-
-            modelBuilder.Entity("CourseOfferingDiplomaYearSection", b =>
-                {
-                    b.Property<int>("DiplomaYearSectionId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("DiplomaYearSectionId1")
-                        .HasColumnType("int");
-
-                    b.HasKey("DiplomaYearSectionId", "DiplomaYearSectionId1");
-
-                    b.HasIndex("DiplomaYearSectionId1");
-
-                    b.ToTable("CourseOfferingDiplomaYearSection");
-                });
-
-            modelBuilder.Entity("CourseOfferingInstructor", b =>
-                {
-                    b.Property<int>("InstructorId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("InstructorId1")
-                        .HasColumnType("int");
-
-                    b.HasKey("InstructorId", "InstructorId1");
-
-                    b.HasIndex("InstructorId1");
-
-                    b.ToTable("CourseOfferingInstructor");
-                });
-
-            modelBuilder.Entity("CourseOfferingSemester", b =>
-                {
-                    b.Property<int>("SemesterId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SemesterId1")
-                        .HasColumnType("int");
-
-                    b.HasKey("SemesterId", "SemesterId1");
-
-                    b.HasIndex("SemesterId1");
-
-                    b.ToTable("CourseOfferingSemester");
-                });
-
             modelBuilder.Entity("w0448225CourseMap.Models.AcademicYear", b =>
                 {
                     b.Property<int>("Id")
@@ -193,6 +118,14 @@ namespace w0448225CourseMap.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CourseId");
+
+                    b.HasIndex("DiplomaYearSectionId");
+
+                    b.HasIndex("InstructorId");
+
+                    b.HasIndex("SemesterId");
 
                     b.ToTable("CourseOfferings");
                 });
@@ -334,85 +267,12 @@ namespace w0448225CourseMap.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("AcademicYearId");
+
                     b.HasIndex("Name")
                         .IsUnique();
 
                     b.ToTable("Semesters");
-                });
-
-            modelBuilder.Entity("AcademicYearSemester", b =>
-                {
-                    b.HasOne("w0448225CourseMap.Models.Semester", null)
-                        .WithMany()
-                        .HasForeignKey("AcademicYearId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("w0448225CourseMap.Models.AcademicYear", null)
-                        .WithMany()
-                        .HasForeignKey("AcademicYearId1")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("CourseCourseOffering", b =>
-                {
-                    b.HasOne("w0448225CourseMap.Models.CourseOffering", null)
-                        .WithMany()
-                        .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("w0448225CourseMap.Models.Course", null)
-                        .WithMany()
-                        .HasForeignKey("CourseId1")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("CourseOfferingDiplomaYearSection", b =>
-                {
-                    b.HasOne("w0448225CourseMap.Models.CourseOffering", null)
-                        .WithMany()
-                        .HasForeignKey("DiplomaYearSectionId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("w0448225CourseMap.Models.DiplomaYearSection", null)
-                        .WithMany()
-                        .HasForeignKey("DiplomaYearSectionId1")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("CourseOfferingInstructor", b =>
-                {
-                    b.HasOne("w0448225CourseMap.Models.CourseOffering", null)
-                        .WithMany()
-                        .HasForeignKey("InstructorId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("w0448225CourseMap.Models.Instructor", null)
-                        .WithMany()
-                        .HasForeignKey("InstructorId1")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("CourseOfferingSemester", b =>
-                {
-                    b.HasOne("w0448225CourseMap.Models.CourseOffering", null)
-                        .WithMany()
-                        .HasForeignKey("SemesterId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("w0448225CourseMap.Models.Semester", null)
-                        .WithMany()
-                        .HasForeignKey("SemesterId1")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("w0448225CourseMap.Models.AdvisingAssignment", b =>
@@ -432,6 +292,40 @@ namespace w0448225CourseMap.Migrations
                     b.Navigation("DiplomaYearSection");
 
                     b.Navigation("Instructor");
+                });
+
+            modelBuilder.Entity("w0448225CourseMap.Models.CourseOffering", b =>
+                {
+                    b.HasOne("w0448225CourseMap.Models.Course", "Course")
+                        .WithMany("CourseOfferings")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("w0448225CourseMap.Models.DiplomaYearSection", "DiplomaYearSection")
+                        .WithMany("CourseOfferings")
+                        .HasForeignKey("DiplomaYearSectionId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("w0448225CourseMap.Models.Instructor", "Instructor")
+                        .WithMany("CourseOfferings")
+                        .HasForeignKey("InstructorId")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.HasOne("w0448225CourseMap.Models.Semester", "Semester")
+                        .WithMany("CourseOfferings")
+                        .HasForeignKey("SemesterId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+
+                    b.Navigation("DiplomaYearSection");
+
+                    b.Navigation("Instructor");
+
+                    b.Navigation("Semester");
                 });
 
             modelBuilder.Entity("w0448225CourseMap.Models.CoursePrerequisite", b =>
@@ -483,13 +377,28 @@ namespace w0448225CourseMap.Migrations
                     b.Navigation("DiplomaYear");
                 });
 
+            modelBuilder.Entity("w0448225CourseMap.Models.Semester", b =>
+                {
+                    b.HasOne("w0448225CourseMap.Models.AcademicYear", "AcademicYear")
+                        .WithMany("Semester")
+                        .HasForeignKey("AcademicYearId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("AcademicYear");
+                });
+
             modelBuilder.Entity("w0448225CourseMap.Models.AcademicYear", b =>
                 {
                     b.Navigation("DiplomaYearSection");
+
+                    b.Navigation("Semester");
                 });
 
             modelBuilder.Entity("w0448225CourseMap.Models.Course", b =>
                 {
+                    b.Navigation("CourseOfferings");
+
                     b.Navigation("IsPrerequisiteFor");
 
                     b.Navigation("Prerequisites");
@@ -509,11 +418,20 @@ namespace w0448225CourseMap.Migrations
                 {
                     b.Navigation("AdvisingAssignment")
                         .IsRequired();
+
+                    b.Navigation("CourseOfferings");
                 });
 
             modelBuilder.Entity("w0448225CourseMap.Models.Instructor", b =>
                 {
                     b.Navigation("AdvisingAssignments");
+
+                    b.Navigation("CourseOfferings");
+                });
+
+            modelBuilder.Entity("w0448225CourseMap.Models.Semester", b =>
+                {
+                    b.Navigation("CourseOfferings");
                 });
 #pragma warning restore 612, 618
         }

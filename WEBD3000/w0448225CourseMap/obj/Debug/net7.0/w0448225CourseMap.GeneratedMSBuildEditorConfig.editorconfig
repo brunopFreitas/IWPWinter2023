@@ -9,37 +9,37 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = w0448225CourseMap
 build_property.RootNamespace = w0448225CourseMap
-build_property.ProjectDir = E:\NSCC\Terms\repo\IWPWinter2023\WEBD3000\w0448225CourseMap\
+build_property.ProjectDir = /home/nsccstudent/Documents/git/IWPWinter2023/WEBD3000/w0448225CourseMap/
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = E:\NSCC\Terms\repo\IWPWinter2023\WEBD3000\w0448225CourseMap
+build_property.MSBuildProjectDirectory = /home/nsccstudent/Documents/git/IWPWinter2023/WEBD3000/w0448225CourseMap
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/NSCC/Terms/repo/IWPWinter2023/WEBD3000/w0448225CourseMap/Pages/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+[/home/nsccstudent/Documents/git/IWPWinter2023/WEBD3000/w0448225CourseMap/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/NSCC/Terms/repo/IWPWinter2023/WEBD3000/w0448225CourseMap/Pages/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+[/home/nsccstudent/Documents/git/IWPWinter2023/WEBD3000/w0448225CourseMap/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/NSCC/Terms/repo/IWPWinter2023/WEBD3000/w0448225CourseMap/Pages/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+[/home/nsccstudent/Documents/git/IWPWinter2023/WEBD3000/w0448225CourseMap/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/NSCC/Terms/repo/IWPWinter2023/WEBD3000/w0448225CourseMap/Pages/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[/home/nsccstudent/Documents/git/IWPWinter2023/WEBD3000/w0448225CourseMap/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/NSCC/Terms/repo/IWPWinter2023/WEBD3000/w0448225CourseMap/Pages/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/home/nsccstudent/Documents/git/IWPWinter2023/WEBD3000/w0448225CourseMap/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/NSCC/Terms/repo/IWPWinter2023/WEBD3000/w0448225CourseMap/Pages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+[/home/nsccstudent/Documents/git/IWPWinter2023/WEBD3000/w0448225CourseMap/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/NSCC/Terms/repo/IWPWinter2023/WEBD3000/w0448225CourseMap/Pages/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-6vcjew1frw
+[/home/nsccstudent/Documents/git/IWPWinter2023/WEBD3000/w0448225CourseMap/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-4l2ckm8wi7

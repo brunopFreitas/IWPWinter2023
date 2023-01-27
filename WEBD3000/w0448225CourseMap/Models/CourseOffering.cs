@@ -27,15 +27,15 @@ public class CourseOffering {
 // Navigation Properties
 
     [ForeignKey("CourseId")]
-    public ICollection<Course>? Course {get; set;}
+    public Course? Course {get; set;}  = null!;
 
     [ForeignKey("InstructorId")]
-    public ICollection<Instructor>? Instructor {get; set;}
+    public Instructor? Instructor {get; set;} = null!;
 
     [ForeignKey("DiplomaYearSectionId")]
-    public ICollection<DiplomaYearSection>? DiplomaYearSection {get; set;}
+    public DiplomaYearSection? DiplomaYearSection {get; set;} = null!;
 
     [ForeignKey("SemesterId")]
-    public ICollection<Semester>? Semester {get; set;}
+    public Semester? Semester {get; set;} = null!;
 
 }

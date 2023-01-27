@@ -28,7 +28,7 @@ public class Semester {
 // Navigation Properties
 
     [ForeignKey("AcademicYearId")]
-    public ICollection<AcademicYear>? AcademicYear {get; set;}  
+    public AcademicYear AcademicYear {get; set;} = null!;
 
     public ICollection<CourseOffering> CourseOfferings {get; set;} = null!;
 }
