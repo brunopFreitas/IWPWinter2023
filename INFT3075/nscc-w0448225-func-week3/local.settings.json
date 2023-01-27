@@ -1,29 +1,7 @@
 {
-  "bindings": [
-    {
-      "authLevel": "function",
-      "type": "httpTrigger",
-      "direction": "in",
-      "name": "req",
-      "methods": [
-        "get",
-        "post"
-      ]
-    },
-    {
-      "type": "http",
-      "direction": "out",
-      "name": "res"
-    },
-    {
-      "type": "queue",
-      "direction": "out",
-      "name": "outputQueueItem",
-      "queueName": "nscc-w0448225-queue-week3",
-      "connection": "AzureWebJobsStorage"
-    }
-  ],
+  "IsEncrypted": false,
   "Values": {
+    "db_password": "INFT3075@",
     "FUNCTIONS_EXTENSION_VERSION": "~4",
     "FUNCTIONS_WORKER_RUNTIME": "node",
     "WEBSITE_NODE_DEFAULT_VERSION": "~18",
