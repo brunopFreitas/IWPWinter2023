@@ -61,7 +61,8 @@ namespace w0448225CourseMap.Migrations
                     b.HasIndex("DiplomaYearSectionId")
                         .IsUnique();
 
-                    b.HasIndex("InstructorId");
+                    b.HasIndex("InstructorId", "DiplomaYearSectionId")
+                        .IsUnique();
 
                     b.ToTable("AdvisingAssignments");
                 });
@@ -146,9 +147,10 @@ namespace w0448225CourseMap.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CourseId");
-
                     b.HasIndex("PrerequisiteId");
+
+                    b.HasIndex("CourseId", "PrerequisiteId")
+                        .IsUnique();
 
                     b.ToTable("CoursePrerequisites");
                 });
@@ -186,11 +188,14 @@ namespace w0448225CourseMap.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("DiplomaId");
+
+                    b.HasIndex("Title", "DiplomaId")
+                        .IsUnique();
 
                     b.ToTable("DiplomaYears");
                 });
@@ -211,13 +216,16 @@ namespace w0448225CourseMap.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("AcademicYearId");
 
                     b.HasIndex("DiplomaYearId");
+
+                    b.HasIndex("Title", "DiplomaYearId", "AcademicYearId")
+                        .IsUnique();
 
                     b.ToTable("DiplomaYearSections");
                 });

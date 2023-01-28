@@ -5,6 +5,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace w0448225CourseMap.Models;
 
 [Table("CoursePrerequisites")]
+[Index(nameof(CoursePrerequisite.CourseId),
+nameof(CoursePrerequisite.PrerequisiteId),
+IsUnique = true)]
 public class CoursePrerequisite {
 
 // Scalar Properties - Columns

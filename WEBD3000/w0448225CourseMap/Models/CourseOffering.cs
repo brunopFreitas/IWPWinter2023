@@ -5,6 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace w0448225CourseMap.Models;
 
 [Table("CourseOfferings")]
+// [Index(nameof(CourseOffering.CourseId), 
+// nameof(CourseOffering.InstructorId),  
+// nameof(CourseOffering.DiplomaYearSectionId), 
+// nameof(CourseOffering.SemesterId),  
+// IsUnique = true)]
 public class CourseOffering {
 
 // Scalar Properties - Columns
@@ -12,7 +17,8 @@ public class CourseOffering {
 
     [Required]
     public int? CourseId { get; set; }
-
+    
+    // [Required]
     public int? InstructorId { get; set; }
 
     [Required]

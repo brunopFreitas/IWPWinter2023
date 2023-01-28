@@ -1,8 +1,13 @@
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace w0448225CourseMap.Models;
 
+[Index(nameof(DiplomaYearSection.Title), 
+nameof(DiplomaYearSection.DiplomaYearId),  
+nameof(DiplomaYearSection.AcademicYearId), 
+IsUnique = true)]
 [Table("DiplomaYearSections")]
 public class DiplomaYearSection {
     // Scalar properties
@@ -10,6 +15,7 @@ public class DiplomaYearSection {
     public int Id { get; set; }
 
     [Required]
+    [RegularExpression(@"^[Section]+ [1-9]$")]
     public string? Title { get; set; }
 
     [Required]

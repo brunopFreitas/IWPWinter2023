@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace w0448225CourseMap.Migrations
 {
     /// <inheritdoc />
-    public partial class CreateTable : Migration
+    public partial class CreateTables : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -116,7 +116,7 @@ namespace w0448225CourseMap.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     DiplomaId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -135,7 +135,7 @@ namespace w0448225CourseMap.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     DiplomaYearId = table.Column<int>(type: "int", nullable: false),
                     AcademicYearId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -228,9 +228,10 @@ namespace w0448225CourseMap.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_AdvisingAssignments_InstructorId",
+                name: "IX_AdvisingAssignments_InstructorId_DiplomaYearSectionId",
                 table: "AdvisingAssignments",
-                column: "InstructorId");
+                columns: new[] { "InstructorId", "DiplomaYearSectionId" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_CourseOfferings_CourseId",
@@ -253,9 +254,10 @@ namespace w0448225CourseMap.Migrations
                 column: "SemesterId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CoursePrerequisites_CourseId",
+                name: "IX_CoursePrerequisites_CourseId_PrerequisiteId",
                 table: "CoursePrerequisites",
-                column: "CourseId");
+                columns: new[] { "CourseId", "PrerequisiteId" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_CoursePrerequisites_PrerequisiteId",
@@ -280,6 +282,12 @@ namespace w0448225CourseMap.Migrations
                 column: "DiplomaId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_DiplomaYears_Title_DiplomaId",
+                table: "DiplomaYears",
+                columns: new[] { "Title", "DiplomaId" },
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_DiplomaYearSections_AcademicYearId",
                 table: "DiplomaYearSections",
                 column: "AcademicYearId");
@@ -288,6 +296,12 @@ namespace w0448225CourseMap.Migrations
                 name: "IX_DiplomaYearSections_DiplomaYearId",
                 table: "DiplomaYearSections",
                 column: "DiplomaYearId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DiplomaYearSections_Title_DiplomaYearId_AcademicYearId",
+                table: "DiplomaYearSections",
+                columns: new[] { "Title", "DiplomaYearId", "AcademicYearId" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Semesters_AcademicYearId",

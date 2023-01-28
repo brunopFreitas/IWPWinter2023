@@ -12,13 +12,8 @@ using w0448225CourseMap.Data;
 namespace w0448225CourseMap.Migrations
 {
     [DbContext(typeof(w0448225CourseMapContext))]
-<<<<<<< HEAD:WEBD3000/w0448225CourseMap/Migrations/20230127151855_CreateTable.Designer.cs
-    [Migration("20230127151855_CreateTable")]
-    partial class CreateTable
-=======
-    [Migration("20230126225023_CreateTables")]
+    [Migration("20230128150550_CreateTables")]
     partial class CreateTables
->>>>>>> 9e54eba961ea4ab21b9f24b4f2d684c5f63490d3:WEBD3000/w0448225CourseMap/Migrations/20230126225023_CreateTables.Designer.cs
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -69,7 +64,8 @@ namespace w0448225CourseMap.Migrations
                     b.HasIndex("DiplomaYearSectionId")
                         .IsUnique();
 
-                    b.HasIndex("InstructorId");
+                    b.HasIndex("InstructorId", "DiplomaYearSectionId")
+                        .IsUnique();
 
                     b.ToTable("AdvisingAssignments");
                 });
@@ -154,9 +150,10 @@ namespace w0448225CourseMap.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CourseId");
-
                     b.HasIndex("PrerequisiteId");
+
+                    b.HasIndex("CourseId", "PrerequisiteId")
+                        .IsUnique();
 
                     b.ToTable("CoursePrerequisites");
                 });
@@ -194,11 +191,14 @@ namespace w0448225CourseMap.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("DiplomaId");
+
+                    b.HasIndex("Title", "DiplomaId")
+                        .IsUnique();
 
                     b.ToTable("DiplomaYears");
                 });
@@ -219,13 +219,16 @@ namespace w0448225CourseMap.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("AcademicYearId");
 
                     b.HasIndex("DiplomaYearId");
+
+                    b.HasIndex("Title", "DiplomaYearId", "AcademicYearId")
+                        .IsUnique();
 
                     b.ToTable("DiplomaYearSections");
                 });
