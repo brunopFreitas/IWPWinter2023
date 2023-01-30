@@ -12,7 +12,7 @@ using w0448225CourseMap.Data;
 namespace w0448225CourseMap.Migrations
 {
     [DbContext(typeof(w0448225CourseMapContext))]
-    [Migration("20230130152407_CreateTable")]
+    [Migration("20230130153148_CreateTable")]
     partial class CreateTable
     {
         /// <inheritdoc />
@@ -285,7 +285,7 @@ namespace w0448225CourseMap.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Semesters");
+                    b.ToTable("CK_Check_End_date", "[EndDate] > [StartDate]");
                 });
 
             modelBuilder.Entity("w0448225CourseMap.Models.AdvisingAssignment", b =>

@@ -25,6 +25,7 @@ namespace w0448225CourseMap.Pages_AdvisingAssignment
 
 
         var instructorList = _context.Instructors.ToList();
+        // He created a view folder for this, instead of creating this class here
         var instructorDropdownList = new List<InstructorForDropdown>();
         instructorDropdownList.Add(new InstructorForDropdown(){
             Id=null,
