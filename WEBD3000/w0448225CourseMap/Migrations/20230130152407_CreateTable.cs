@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace w0448225CourseMap.Migrations
 {
     /// <inheritdoc />
-    public partial class CreateTables : Migration
+    public partial class CreateTable : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -234,9 +234,11 @@ namespace w0448225CourseMap.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_CourseOfferings_CourseId",
+                name: "IX_CourseOfferings_CourseId_InstructorId_DiplomaYearSectionId_SemesterId",
                 table: "CourseOfferings",
-                column: "CourseId");
+                columns: new[] { "CourseId", "InstructorId", "DiplomaYearSectionId", "SemesterId" },
+                unique: true,
+                filter: "[InstructorId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CourseOfferings_DiplomaYearSectionId",

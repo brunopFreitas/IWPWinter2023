@@ -22,7 +22,24 @@ namespace w0448225CourseMap.Pages_AdvisingAssignment
         public IActionResult OnGet()
         {
         ViewData["DiplomaYearSectionId"] = new SelectList(_context.DiplomaYearSections, "Id", "Title");
-        ViewData["InstructorId"] = new SelectList(_context.Instructors, "Id", "FirstName");
+
+
+        var instructorList = _context.Instructors.ToList();
+        var instructorDropdownList = new List<InstructorForDropdown>();
+        instructorDropdownList.Add(new InstructorForDropdown(){
+            Id=null,
+            FullName="No Instructor Selected"
+        });
+        // Add the rest of the date looping through instructor
+        instructorList.ForEach(instructor => {
+            instructorDropdownList.Add(new InstructorForDropdown(){
+                Id=instructor.Id,
+                FullName=instructor.FirstName
+            });
+        });
+
+
+        ViewData["InstructorId"] = new SelectList(instructorDropdownList, "Id", "FullName");
             return Page();
         }
 
@@ -45,3 +62,8 @@ namespace w0448225CourseMap.Pages_AdvisingAssignment
         }
     }
 }
+
+    public class InstructorForDropdown {
+        public int? Id {get; set; }
+        public string? FullName { get; set; }
+    }

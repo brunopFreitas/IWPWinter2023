@@ -120,13 +120,15 @@ namespace w0448225CourseMap.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CourseId");
-
                     b.HasIndex("DiplomaYearSectionId");
 
                     b.HasIndex("InstructorId");
 
                     b.HasIndex("SemesterId");
+
+                    b.HasIndex("CourseId", "InstructorId", "DiplomaYearSectionId", "SemesterId")
+                        .IsUnique()
+                        .HasFilter("[InstructorId] IS NOT NULL");
 
                     b.ToTable("CourseOfferings");
                 });

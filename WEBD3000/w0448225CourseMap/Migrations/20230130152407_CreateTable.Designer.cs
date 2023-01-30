@@ -12,8 +12,8 @@ using w0448225CourseMap.Data;
 namespace w0448225CourseMap.Migrations
 {
     [DbContext(typeof(w0448225CourseMapContext))]
-    [Migration("20230128150550_CreateTables")]
-    partial class CreateTables
+    [Migration("20230130152407_CreateTable")]
+    partial class CreateTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -123,13 +123,15 @@ namespace w0448225CourseMap.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CourseId");
-
                     b.HasIndex("DiplomaYearSectionId");
 
                     b.HasIndex("InstructorId");
 
                     b.HasIndex("SemesterId");
+
+                    b.HasIndex("CourseId", "InstructorId", "DiplomaYearSectionId", "SemesterId")
+                        .IsUnique()
+                        .HasFilter("[InstructorId] IS NOT NULL");
 
                     b.ToTable("CourseOfferings");
                 });

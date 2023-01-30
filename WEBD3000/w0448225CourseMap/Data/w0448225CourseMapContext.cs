@@ -39,6 +39,9 @@ namespace w0448225CourseMap.Data
                 .HasMany(c => c.IsPrerequisiteFor)
                 .WithOne(cpr => cpr.Prerequisite)
                 .HasForeignKey(cpr => cpr.PrerequisiteId);
+            modelBuilder.Entity<Semester>(entity => 
+                entity.ToTable("CK_Check_End_date", "[EndDate] > [StartDate]")
+            );
 
             // // RECONCILE THE MANY TO MANY RECURSIVE (VERSION 2)
             // modelBuilder.Entity<Course>()

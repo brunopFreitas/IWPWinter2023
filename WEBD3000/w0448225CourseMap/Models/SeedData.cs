@@ -2406,7 +2406,7 @@ namespace w0448225CourseMap.Models
                     },
                     new CourseOffering
                     {
-                        SemesterId = generatedSemesters.Find(s => s.Name == "Winter 2022").Id,
+                        SemesterId = generatedSemesters.Find(s => s.Name == "Winter 2023").Id,
                         DiplomaYearSectionId = generatedDiplomaYearSections.Find(dys => dys.Title == "Section 1" && dys.DiplomaYear.Title == "Year 1" && dys.DiplomaYear.Diploma.Title == "IT - Web Programming").Id,
                         CourseId = generatedCourses.Find(c => c.CourseCode == "OSYS 2040").Id,
                         InstructorId = generatedInstructors.Find(i => i.LastName == "Lin").Id
