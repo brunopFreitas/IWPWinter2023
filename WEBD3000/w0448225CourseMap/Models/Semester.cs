@@ -16,10 +16,12 @@ public class Semester {
 
     [Required]
     [Column(TypeName="Date")]
+    [Display(Name = "Start Date")]
     public DateTime StartDate { get; set; }    
 
     [Required]
     [Column(TypeName="Date")]
+    [Display(Name = "End Date")]
     // [DateLaterThan("StartDate", ErrorMessage = "Not valid")]
     public DateTime EndDate { get; set; }
 
@@ -29,6 +31,7 @@ public class Semester {
 // Navigation Properties
 
     [ForeignKey("AcademicYearId")]
+    [Display(Name = "Academic Year")]
     public AcademicYear AcademicYear {get; set;} = null!;
 
     public ICollection<CourseOffering> CourseOfferings {get; set;} = null!;

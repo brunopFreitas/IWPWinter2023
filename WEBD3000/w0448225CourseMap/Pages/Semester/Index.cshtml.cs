@@ -26,7 +26,9 @@ namespace w0448225CourseMap.Pages_Semester
             if (_context.Semesters != null)
             {
                 Semester = await _context.Semesters
-                .Include(s => s.AcademicYear).ToListAsync();
+                .Include(s => s.AcademicYear)
+                .OrderByDescending(s => s.StartDate)
+                .ToListAsync();
             }
         }
     }

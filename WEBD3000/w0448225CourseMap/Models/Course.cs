@@ -13,6 +13,7 @@ public class Course {
 
     [Required]
     [RegularExpression(@"^[A-Z]+ [0-9]+$")]
+    [Display(Name = "Course Code")]
     public string? CourseCode { get; set; }
 
     [Required]

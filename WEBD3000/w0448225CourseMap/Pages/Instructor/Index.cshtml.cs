@@ -25,7 +25,9 @@ namespace w0448225CourseMap.Pages_Instructor
         {
             if (_context.Instructors != null)
             {
-                Instructor = await _context.Instructors.ToListAsync();
+                Instructor = await _context.Instructors
+                                            .OrderBy(i => i.LastName)
+                                            .ToListAsync();
             }
         }
     }

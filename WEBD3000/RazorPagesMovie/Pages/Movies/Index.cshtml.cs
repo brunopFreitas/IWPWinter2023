@@ -27,7 +27,8 @@ namespace RazorPagesMovie.Pages.Movies
             {
                 Movie = await _context.Movie
                 .Include(m => m.Genre)
-                .Include(m => m.Language).ToListAsync();
+                .Include(m => m.Language)
+                .ToListAsync();
             }
         }
     }

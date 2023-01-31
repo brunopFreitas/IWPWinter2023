@@ -25,7 +25,9 @@ namespace w0448225CourseMap.Pages_Diploma
         {
             if (_context.Diplomas != null)
             {
-                Diploma = await _context.Diplomas.ToListAsync();
+                Diploma = await _context.Diplomas
+                                    .OrderBy(d => d.Title)
+                                    .ToListAsync();
             }
         }
     }

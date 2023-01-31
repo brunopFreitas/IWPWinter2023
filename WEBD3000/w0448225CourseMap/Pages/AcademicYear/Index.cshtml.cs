@@ -25,7 +25,9 @@ namespace w0448225CourseMap.Pages_AcademicYear
         {
             if (_context.AcademicYears != null)
             {
-                AcademicYear = await _context.AcademicYears.ToListAsync();
+                AcademicYear = await _context.AcademicYears
+                                            .OrderByDescending(y => y.Title)
+                                            .ToListAsync();
             }
         }
     }
