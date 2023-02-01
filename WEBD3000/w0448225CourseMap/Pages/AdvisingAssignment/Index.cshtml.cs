@@ -27,7 +27,13 @@ namespace w0448225CourseMap.Pages_AdvisingAssignment
             {
                 AdvisingAssignment = await _context.AdvisingAssignments
                 .Include(a => a.DiplomaYearSection)
-                .Include(a => a.Instructor).ToListAsync();
+                .Include(a => a.DiplomaYearSection.DiplomaYear)
+                .Include(a => a.DiplomaYearSection.DiplomaYear.Diploma)
+                .Include(a => a.Instructor)
+                .OrderBy(d => d.DiplomaYearSection.DiplomaYear.Diploma.Title)
+                .OrderBy(d => d.DiplomaYearSection.DiplomaYear.Title)
+                .OrderBy(d => d.DiplomaYearSection.Title)
+                .ToListAsync();
             }
         }
     }

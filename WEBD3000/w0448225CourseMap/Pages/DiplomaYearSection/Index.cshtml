@@ -5,7 +5,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Diploma Year Sections</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -14,10 +14,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.DiplomaYearSection[0].Title)
+                @Html.DisplayNameFor(model => model.DiplomaYearSection[0].DiplomaYear)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DiplomaYearSection[0].DiplomaYear)
+                @Html.DisplayNameFor(model => model.DiplomaYearSection[0].Title)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DiplomaYearSection[0].AcademicYear)
@@ -29,10 +29,12 @@
 @foreach (var item in Model.DiplomaYearSection) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Title)
+                @Html.DisplayFor(modelItem => item.DiplomaYear.Diploma.Title)
+                -
+                @Html.DisplayFor(modelItem => item.DiplomaYear.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DiplomaYear.Title)
+                @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.AcademicYear.Title)

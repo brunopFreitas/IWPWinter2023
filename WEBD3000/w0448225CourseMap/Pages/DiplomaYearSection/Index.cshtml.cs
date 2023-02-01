@@ -27,7 +27,12 @@ namespace w0448225CourseMap.Pages_DiplomaYearSection
             {
                 DiplomaYearSection = await _context.DiplomaYearSections
                 .Include(d => d.AcademicYear)
-                .Include(d => d.DiplomaYear).ToListAsync();
+                .OrderByDescending(d => d.AcademicYear.Title)
+                .Include(d => d.DiplomaYear)
+                .Include(d => d.DiplomaYear.Diploma)
+                .OrderBy(d => d.DiplomaYear.Title)
+                .OrderBy(d => d.Title)
+                .ToListAsync();
             }
         }
     }
