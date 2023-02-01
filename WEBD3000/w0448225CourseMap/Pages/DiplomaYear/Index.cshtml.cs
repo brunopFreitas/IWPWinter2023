@@ -27,7 +27,7 @@ namespace w0448225CourseMap.Pages_DiplomaYear
             {
                 DiplomaYear = await _context.DiplomaYears
                 .Include(d => d.Diploma)
-                .OrderBy(d => d.Diploma)
+                .OrderBy(d => d.Diploma.Title)
                 .ToListAsync();
             }
         }
