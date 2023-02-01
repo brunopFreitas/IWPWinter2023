@@ -28,8 +28,15 @@ namespace w0448225CourseMap.Pages_CourseOffering
                 CourseOffering = await _context.CourseOfferings
                 .Include(c => c.Course)
                 .Include(c => c.DiplomaYearSection)
+                .Include(c => c.DiplomaYearSection.DiplomaYear)
+                .Include(c => c.DiplomaYearSection.DiplomaYear.Diploma)
                 .Include(c => c.Instructor)
-                .Include(c => c.Semester).ToListAsync();
+                .Include(c => c.Semester)
+                .OrderByDescending(c => c.Semester)
+                .OrderBy(c => c.DiplomaYearSection.DiplomaYear.Diploma)
+                .OrderBy(c => c.DiplomaYearSection.DiplomaYear)
+                .OrderBy(c => c.Course)
+                .ToListAsync();
             }
         }
     }

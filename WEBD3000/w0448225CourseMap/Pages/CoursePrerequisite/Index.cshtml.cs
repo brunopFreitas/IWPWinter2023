@@ -27,7 +27,10 @@ namespace w0448225CourseMap.Pages_CoursePrerequisite
             {
                 CoursePrerequisite = await _context.CoursePrerequisites
                 .Include(c => c.Course)
-                .Include(c => c.Prerequisite).ToListAsync();
+                .Include(c => c.Prerequisite)
+                .OrderBy(c => c.Course.CourseCode)
+                .OrderBy(c => c.Prerequisite.CourseCode)
+                .ToListAsync();
             }
         }
     }

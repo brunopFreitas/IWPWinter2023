@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using w0448225CourseMap.Data;
 using w0448225CourseMap.Models;
 
@@ -21,8 +22,17 @@ namespace w0448225CourseMap.Pages_AdvisingAssignment
 
         public IActionResult OnGet()
         {
-        ViewData["DiplomaYearSectionId"] = new SelectList(_context.DiplomaYearSections, "Id", "Title");
-
+        ViewData["DiplomaYearSectionId"] = new SelectList(
+            (
+                from dys in _context.DiplomaYearSections
+                .Include(dys => dys.DiplomaYear)
+                .ThenInclude(dy => dy.Diploma)
+                .ToList()
+                select new {
+                    Id=dys.Id,
+                    Title=dys.DiplomaYear.Diploma.Title + " - " + dys.DiplomaYear.Title + " - " + dys.Title
+                }
+            ), "Id", "Title");
 
         var instructorList = _context.Instructors.ToList();
         // He created a view folder for this, instead of creating this class here
@@ -35,7 +45,7 @@ namespace w0448225CourseMap.Pages_AdvisingAssignment
         instructorList.ForEach(instructor => {
             instructorDropdownList.Add(new InstructorForDropdown(){
                 Id=instructor.Id,
-                FullName=instructor.FirstName
+                FullName=instructor.FullName
             });
         });
 

@@ -36,8 +36,19 @@ namespace w0448225CourseMap.Pages_AdvisingAssignment
                 return NotFound();
             }
             AdvisingAssignment = advisingassignment;
-           ViewData["DiplomaYearSectionId"] = new SelectList(_context.DiplomaYearSections, "Id", "Title");
-           ViewData["InstructorId"] = new SelectList(_context.Instructors, "Id", "FirstName");
+                   ViewData["DiplomaYearSectionId"] = new SelectList(
+            (
+                from dys in _context.DiplomaYearSections
+                .Include(dys => dys.DiplomaYear)
+                .ThenInclude(dy => dy.Diploma)
+                .ToList()
+                select new {
+                    Id=dys.Id,
+                    Title=dys.DiplomaYear.Diploma.Title + " - " + dys.DiplomaYear.Title + " - " + dys.Title
+                }
+            ), "Id", "Title");
+            
+           ViewData["InstructorId"] = new SelectList(_context.Instructors, "Id", "FullName");
             return Page();
         }
 

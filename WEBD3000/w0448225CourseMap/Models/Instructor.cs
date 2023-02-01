@@ -18,6 +18,13 @@ public class Instructor {
     [Display(Name = "Last Name")]
     public string? LastName { get; set; }
 
+    // Computed Property
+    public string FullName {
+        get {
+            return FirstName + " " + LastName;
+        }
+    }
+
 // Navigation Properties
 
     public ICollection<AdvisingAssignment> AdvisingAssignments {get; set;} = null!;    
