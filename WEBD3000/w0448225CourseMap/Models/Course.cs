@@ -12,7 +12,7 @@ public class Course {
     public int Id { get; set; }
 
     [Required]
-    [RegularExpression(@"^[A-Z]+ [0-9]+$")]
+    [RegularExpression(@"^[A-Z]{4}+ [0-9]{4}$")]
     [Display(Name = "Course Code")]
     public string? CourseCode { get; set; }
 
@@ -26,6 +26,6 @@ public class Course {
 
     public ICollection<CoursePrerequisite>? IsPrerequisiteFor {get; set;}   
 
-    public ICollection<CourseOffering> CourseOfferings {get; set;} = null!;   
+    public ICollection<CourseOffering>? CourseOfferings {get; set;} 
 
 }
