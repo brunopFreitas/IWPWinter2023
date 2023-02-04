@@ -28,7 +28,14 @@ namespace w0448225CourseMap.Pages_CourseOffering
                 return NotFound();
             }
 
-            var courseoffering = await _context.CourseOfferings.FirstOrDefaultAsync(m => m.Id == id);
+            var courseoffering = await _context.CourseOfferings
+                .Include(co => co.DiplomaYearSection)
+                .Include(co => co.DiplomaYearSection.DiplomaYear)
+                .Include(co => co.DiplomaYearSection.DiplomaYear.Diploma)
+                .Include(co => co.Instructor)
+                .Include(co => co.Course)
+                .Include(co => co.Semester)
+            .FirstOrDefaultAsync(m => m.Id == id);
             if (courseoffering == null)
             {
                 return NotFound();

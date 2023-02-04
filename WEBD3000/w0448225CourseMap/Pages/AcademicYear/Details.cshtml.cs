@@ -28,7 +28,10 @@ namespace w0448225CourseMap.Pages_AcademicYear
                 return NotFound();
             }
 
-            var academicyear = await _context.AcademicYears.FirstOrDefaultAsync(m => m.Id == id);
+            var academicyear = await _context.AcademicYears
+                .Include(ay => ay.Semester)
+                
+            .FirstOrDefaultAsync(m => m.Id == id);
             if (academicyear == null)
             {
                 return NotFound();

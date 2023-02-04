@@ -22,7 +22,6 @@ public class Semester {
     [Required]
     [Column(TypeName="Date")]
     [Display(Name = "End Date")]
-    // [DateLaterThan("StartDate", ErrorMessage = "Not valid")]
     public DateTime EndDate { get; set; }
 
     [Required]

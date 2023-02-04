@@ -11,9 +11,6 @@ namespace w0448225CourseMap.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.EnsureSchema(
-                name: "[EndDate] > [StartDate]");
-
             migrationBuilder.CreateTable(
                 name: "AcademicYears",
                 columns: table => new
@@ -69,8 +66,7 @@ namespace w0448225CourseMap.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CK_Check_End_date",
-                schema: "[EndDate] > [StartDate]",
+                name: "Semesters",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -82,9 +78,10 @@ namespace w0448225CourseMap.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CK_Check_End_date", x => x.Id);
+                    table.PrimaryKey("PK_Semesters", x => x.Id);
+                    table.CheckConstraint("CK_Check_End_date", "[EndDate] > [StartDate]");
                     table.ForeignKey(
-                        name: "FK_CK_Check_End_date_AcademicYears_AcademicYearId",
+                        name: "FK_Semesters_AcademicYears_AcademicYearId",
                         column: x => x.AcademicYearId,
                         principalTable: "AcademicYears",
                         principalColumn: "Id");
@@ -198,12 +195,6 @@ namespace w0448225CourseMap.Migrations
                 {
                     table.PrimaryKey("PK_CourseOfferings", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_CourseOfferings_CK_Check_End_date_SemesterId",
-                        column: x => x.SemesterId,
-                        principalSchema: "[EndDate] > [StartDate]",
-                        principalTable: "CK_Check_End_date",
-                        principalColumn: "Id");
-                    table.ForeignKey(
                         name: "FK_CourseOfferings_Courses_CourseId",
                         column: x => x.CourseId,
                         principalTable: "Courses",
@@ -217,6 +208,11 @@ namespace w0448225CourseMap.Migrations
                         name: "FK_CourseOfferings_Instructors_InstructorId",
                         column: x => x.InstructorId,
                         principalTable: "Instructors",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_CourseOfferings_Semesters_SemesterId",
+                        column: x => x.SemesterId,
+                        principalTable: "Semesters",
                         principalColumn: "Id");
                 });
 
@@ -236,19 +232,6 @@ namespace w0448225CourseMap.Migrations
                 name: "IX_AdvisingAssignments_InstructorId_DiplomaYearSectionId",
                 table: "AdvisingAssignments",
                 columns: new[] { "InstructorId", "DiplomaYearSectionId" },
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CK_Check_End_date_AcademicYearId",
-                schema: "[EndDate] > [StartDate]",
-                table: "CK_Check_End_date",
-                column: "AcademicYearId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CK_Check_End_date_Name",
-                schema: "[EndDate] > [StartDate]",
-                table: "CK_Check_End_date",
-                column: "Name",
                 unique: true);
 
             migrationBuilder.CreateIndex(
@@ -322,6 +305,17 @@ namespace w0448225CourseMap.Migrations
                 table: "DiplomaYearSections",
                 columns: new[] { "Title", "DiplomaYearId", "AcademicYearId" },
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Semesters_AcademicYearId",
+                table: "Semesters",
+                column: "AcademicYearId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Semesters_Name",
+                table: "Semesters",
+                column: "Name",
+                unique: true);
         }
 
         /// <inheritdoc />
@@ -337,23 +331,22 @@ namespace w0448225CourseMap.Migrations
                 name: "CoursePrerequisites");
 
             migrationBuilder.DropTable(
-                name: "CK_Check_End_date",
-                schema: "[EndDate] > [StartDate]");
-
-            migrationBuilder.DropTable(
                 name: "DiplomaYearSections");
 
             migrationBuilder.DropTable(
                 name: "Instructors");
 
             migrationBuilder.DropTable(
+                name: "Semesters");
+
+            migrationBuilder.DropTable(
                 name: "Courses");
 
             migrationBuilder.DropTable(
-                name: "AcademicYears");
+                name: "DiplomaYears");
 
             migrationBuilder.DropTable(
-                name: "DiplomaYears");
+                name: "AcademicYears");
 
             migrationBuilder.DropTable(
                 name: "Diplomas");

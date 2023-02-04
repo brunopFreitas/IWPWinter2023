@@ -12,22 +12,24 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CourseOffering.IsDirectedElective)
+            @Html.DisplayNameFor(model => model.CourseOffering.DiplomaYearSection.DiplomaYear.Diploma)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CourseOffering.IsDirectedElective)
+            @Html.DisplayFor(model => model.CourseOffering.DiplomaYearSection.DiplomaYear.Diploma.Title)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.CourseOffering.Course)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CourseOffering.Course.CourseCode)
+            @Html.DisplayFor(model => model.CourseOffering.Course.CourseCode) - 
+            @Html.DisplayFor(model => model.CourseOffering.Course.Title)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.CourseOffering.Instructor)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CourseOffering.Instructor.FirstName)
+            @Html.DisplayFor(model => model.CourseOffering.Instructor.LastName)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.CourseOffering.DiplomaYearSection)
@@ -40,6 +42,12 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CourseOffering.Semester.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CourseOffering.IsDirectedElective)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CourseOffering.IsDirectedElective)
         </dd>
     </dl>
 </div>

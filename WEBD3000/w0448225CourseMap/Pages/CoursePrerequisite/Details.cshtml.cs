@@ -28,7 +28,10 @@ namespace w0448225CourseMap.Pages_CoursePrerequisite
                 return NotFound();
             }
 
-            var courseprerequisite = await _context.CoursePrerequisites.FirstOrDefaultAsync(m => m.Id == id);
+            var courseprerequisite = await _context.CoursePrerequisites
+                .Include(c => c.Course)
+                .Include(pr => pr.Prerequisite)
+            .FirstOrDefaultAsync(m => m.Id == id);
             if (courseprerequisite == null)
             {
                 return NotFound();

@@ -12,7 +12,7 @@ public class Course {
     public int Id { get; set; }
 
     [Required]
-    [RegularExpression(@"^[A-Z]{4}+ [0-9]{4}$")]
+    [RegularExpression(@"^[A-Z]+ [0-9]$")]
     [Display(Name = "Course Code")]
     public string? CourseCode { get; set; }
 

@@ -16,12 +16,19 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.AdvisingAssignment.Instructor.FirstName)
+            @Html.DisplayFor(model => model.AdvisingAssignment.Instructor.LastName)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.AdvisingAssignment.DiplomaYearSection)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.AdvisingAssignment.DiplomaYearSection.Title)
+        </dd>
+        <dt class="col-sm-2">
+            Name of the Diploma: 
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AdvisingAssignment.DiplomaYearSection.DiplomaYear.Diploma.Title)
         </dd>
     </dl>
 </div>

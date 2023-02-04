@@ -28,7 +28,10 @@ namespace w0448225CourseMap.Pages_AdvisingAssignment
                 return NotFound();
             }
 
-            var advisingassignment = await _context.AdvisingAssignments.FirstOrDefaultAsync(m => m.Id == id);
+            var advisingassignment = await _context.AdvisingAssignments
+                .Include(aa => aa.Instructor)
+                .Include(aa => aa.DiplomaYearSection.DiplomaYear.Diploma)
+            .FirstOrDefaultAsync(m => m.Id == id);
             if (advisingassignment == null)
             {
                 return NotFound();

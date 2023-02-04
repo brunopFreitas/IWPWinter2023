@@ -282,7 +282,10 @@ namespace w0448225CourseMap.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("CK_Check_End_date", "[EndDate] > [StartDate]");
+                    b.ToTable("Semesters", t =>
+                        {
+                            t.HasCheckConstraint("CK_Check_End_date", "[EndDate] > [StartDate]");
+                        });
                 });
 
             modelBuilder.Entity("w0448225CourseMap.Models.AdvisingAssignment", b =>

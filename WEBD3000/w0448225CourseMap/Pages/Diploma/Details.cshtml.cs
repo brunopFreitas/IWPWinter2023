@@ -28,7 +28,9 @@ namespace w0448225CourseMap.Pages_Diploma
                 return NotFound();
             }
 
-            var diploma = await _context.Diplomas.FirstOrDefaultAsync(m => m.Id == id);
+            var diploma = await _context.Diplomas
+                .Include(d => d.DiplomaYears)
+            .FirstOrDefaultAsync(m => m.Id == id);
             if (diploma == null)
             {
                 return NotFound();

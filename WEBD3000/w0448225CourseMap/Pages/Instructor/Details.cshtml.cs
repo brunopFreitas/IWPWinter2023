@@ -28,7 +28,9 @@ namespace w0448225CourseMap.Pages_Instructor
                 return NotFound();
             }
 
-            var instructor = await _context.Instructors.FirstOrDefaultAsync(m => m.Id == id);
+            var instructor = await _context.Instructors
+                .Include(i => i.AdvisingAssignments)
+            .FirstOrDefaultAsync(m => m.Id == id);
             if (instructor == null)
             {
                 return NotFound();

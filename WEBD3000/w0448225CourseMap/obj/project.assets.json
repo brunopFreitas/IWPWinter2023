@@ -10891,19 +10891,19 @@
     ]
   },
   "packageFolders": {
-    "/home/nsccstudent/.nuget/packages/": {}
+    "C:\\Users\\Bruno\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/nsccstudent/Documents/git/IWPWinter2023/WEBD3000/w0448225CourseMap/w0448225CourseMap.csproj",
+      "projectUniqueName": "E:\\NSCC\\Terms\\repo\\IWPWinter2023\\WEBD3000\\w0448225CourseMap\\w0448225CourseMap.csproj",
       "projectName": "w0448225CourseMap",
-      "projectPath": "/home/nsccstudent/Documents/git/IWPWinter2023/WEBD3000/w0448225CourseMap/w0448225CourseMap.csproj",
-      "packagesPath": "/home/nsccstudent/.nuget/packages/",
-      "outputPath": "/home/nsccstudent/Documents/git/IWPWinter2023/WEBD3000/w0448225CourseMap/obj/",
+      "projectPath": "E:\\NSCC\\Terms\\repo\\IWPWinter2023\\WEBD3000\\w0448225CourseMap\\w0448225CourseMap.csproj",
+      "packagesPath": "C:\\Users\\Bruno\\.nuget\\packages\\",
+      "outputPath": "E:\\NSCC\\Terms\\repo\\IWPWinter2023\\WEBD3000\\w0448225CourseMap\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/nsccstudent/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Bruno\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -10965,7 +10965,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/nsccstudent/.dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

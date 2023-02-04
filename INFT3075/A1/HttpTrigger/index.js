@@ -8,16 +8,21 @@ module.exports = async function (context, req) {
     // Get the body of the POST message
     const body = req.body
     
-    // Verify name has a value
-    if (body) {
-        // if (body.name) {
-        //     responseMessage = "true"
-        // } else {
-        //     responseMessage = "No name"
-        // }       
-
-        // Send the name to the Queue
-        context.bindings.outputQueueItem = (body)
+    // Verify items has a value
+    if (body.OrderId &&
+        body.FirstName &&
+        body.LastName &&
+        body.CreditNum &&
+        body.CreditExpiry &&
+        body.PaymentDate &&
+        body.Address &&
+        body.City &&
+        body.Province &&
+        body.Country &&
+        body.PostalCode
+        ) {
+            responseMessage = "true"
+            context.bindings.outputQueueItem = (body)
     }
     else {
         responseMessage = "false"
