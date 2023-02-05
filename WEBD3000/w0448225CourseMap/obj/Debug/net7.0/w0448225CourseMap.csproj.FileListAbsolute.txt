@@ -602,3 +602,11 @@ E:\NSCC\Terms\repo\IWPWinter2023\WEBD3000\w0448225CourseMap\obj\Debug\net7.0\ref
 E:\NSCC\Terms\repo\IWPWinter2023\WEBD3000\w0448225CourseMap\obj\Debug\net7.0\w0448225CourseMap.pdb
 E:\NSCC\Terms\repo\IWPWinter2023\WEBD3000\w0448225CourseMap\obj\Debug\net7.0\w0448225CourseMap.genruntimeconfig.cache
 E:\NSCC\Terms\repo\IWPWinter2023\WEBD3000\w0448225CourseMap\obj\Debug\net7.0\ref\w0448225CourseMap.dll
+E:\NSCC\Terms\repo\IWPWinter2023\WEBD3000\w0448225CourseMap\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\NSCC\Terms\repo\IWPWinter2023\WEBD3000\w0448225CourseMap\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\NSCC\Terms\repo\IWPWinter2023\WEBD3000\w0448225CourseMap\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+E:\NSCC\Terms\repo\IWPWinter2023\WEBD3000\w0448225CourseMap\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.UI.dll
+E:\NSCC\Terms\repo\IWPWinter2023\WEBD3000\w0448225CourseMap\bin\Debug\net7.0\Microsoft.Extensions.FileProviders.Embedded.dll
+E:\NSCC\Terms\repo\IWPWinter2023\WEBD3000\w0448225CourseMap\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
+E:\NSCC\Terms\repo\IWPWinter2023\WEBD3000\w0448225CourseMap\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
+E:\NSCC\Terms\repo\IWPWinter2023\WEBD3000\w0448225CourseMap\obj\Debug\net7.0\w0448225CourseMap.MvcApplicationPartsAssemblyInfo.cs
