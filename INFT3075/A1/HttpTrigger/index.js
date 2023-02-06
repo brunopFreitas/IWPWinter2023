@@ -21,11 +21,11 @@ module.exports = async function (context, req) {
         body.Country &&
         body.PostalCode
         ) {
-            responseMessage = "true"
+            responseMessage = "JSON validated"
             context.bindings.outputQueueItem = (body)
     }
     else {
-        responseMessage = "false"
+        responseMessage = "There's an issue with your JSON"
     }
 
     // Send the response (200 ok) to the requestor

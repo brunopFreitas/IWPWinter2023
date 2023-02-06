@@ -30,6 +30,12 @@ namespace w0448225CourseMap.Pages_AcademicYear
 
             var academicyear = await _context.AcademicYears
                 .Include(ay => ay.Semester)
+                .Include(ay => ay.DiplomaYearSection)
+                    .ThenInclude(dys => dys.AdvisingAssignment)
+                        .ThenInclude(aa => aa.Instructor)
+                .Include(ay => ay.DiplomaYearSection)
+                    .ThenInclude(dys => dys.DiplomaYear)
+                        .ThenInclude(dy => dy.Diploma)
                 
             .FirstOrDefaultAsync(m => m.Id == id);
             if (academicyear == null)

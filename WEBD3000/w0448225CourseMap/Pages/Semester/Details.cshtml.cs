@@ -28,7 +28,16 @@ namespace w0448225CourseMap.Pages_Semester
                 return NotFound();
             }
 
-            var semester = await _context.Semesters.FirstOrDefaultAsync(m => m.Id == id);
+            var semester = await _context.Semesters
+                .Include(s => s.CourseOfferings)
+                    .ThenInclude(co => co.Course)
+                .Include(s => s.CourseOfferings)
+                    .ThenInclude(co => co.Instructor)
+                .Include(s => s.CourseOfferings)
+                    .ThenInclude(co => co.DiplomaYearSection)
+                        .ThenInclude(dys => dys.DiplomaYear)
+                            .ThenInclude(dy => dy.Diploma)
+            .FirstOrDefaultAsync(m => m.Id == id);
             if (semester == null)
             {
                 return NotFound();

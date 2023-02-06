@@ -12,22 +12,37 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Instructor.FirstName)
+            Instructor Name: 
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Instructor.FirstName)
+            @Html.DisplayFor(model => model.Instructor.FullName)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Instructor.LastName)
+            Advising Assignments: 
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Instructor.LastName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Instructor.LastName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Instructor.LastName)
+            @foreach (var item in @Model.Instructor.AdvisingAssignments.OrderByDescending(aa => aa.DiplomaYearSection.Title).ThenByDescending(aa => aa.DiplomaYearSection.AcademicYear.Title))
+            {
+                <ul class="border border-secondary rounded">
+                    <li>
+                        Diploma: @item.DiplomaYearSection.DiplomaYear.Diploma.Title
+                    </li>
+                    <li>
+                        Year - Section - Semester: 
+                        <br>
+                        <span>@item.DiplomaYearSection.AcademicYear.Title - @item.DiplomaYearSection.Title</span>
+                        <ul class="border border-primary rounded">
+                            @foreach (var sem in @item.DiplomaYearSection.AcademicYear.Semester)
+                            {
+                                
+                                    <li>
+                                        @sem.Name
+                                    </li>
+                            }
+                        </ul>
+                    </li>
+                </ul>
+            }
         </dd>
     </dl>
 </div>

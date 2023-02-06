@@ -28,7 +28,18 @@ namespace w0448225CourseMap.Pages_DiplomaYear
                 return NotFound();
             }
 
-            var diplomayear = await _context.DiplomaYears.FirstOrDefaultAsync(m => m.Id == id);
+            var diplomayear = await _context.DiplomaYears
+                .Include(dy => dy.DiplomaYearSections)
+                    .ThenInclude(dys => dys.CourseOfferings)
+                        .ThenInclude(co => co.Course)
+                .Include(dy => dy.DiplomaYearSections)
+                    .ThenInclude(dys => dys.CourseOfferings)
+                        .ThenInclude(co => co.Instructor)
+                .Include(dy => dy.DiplomaYearSections)
+                    .ThenInclude(dys => dys.CourseOfferings)
+                        .ThenInclude(co => co.Semester)
+                .Include(dy => dy.Diploma)
+            .FirstOrDefaultAsync(m => m.Id == id);
             if (diplomayear == null)
             {
                 return NotFound();

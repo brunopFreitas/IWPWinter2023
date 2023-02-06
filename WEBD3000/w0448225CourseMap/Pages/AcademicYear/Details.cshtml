@@ -30,7 +30,20 @@
             Advising Assignments: 
         </dt>
         <dd class="col-sm-10">
-            Fuck
+            @foreach (var item in @Model.AcademicYear.DiplomaYearSection)
+            {
+                <ul class="border border-primary rounded">
+                    <li>
+                        Diploma: @item.DiplomaYear.Diploma.Title
+                    </li>
+                    <li>
+                        Year: @item.DiplomaYear.Title
+                    </li>
+                    <li>
+                        Advisor: @item.AdvisingAssignment.Instructor.FullName
+                    </li>
+                </ul>
+            }
             
         </dd>
     </dl>

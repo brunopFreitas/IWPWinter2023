@@ -30,6 +30,13 @@ namespace w0448225CourseMap.Pages_Instructor
 
             var instructor = await _context.Instructors
                 .Include(i => i.AdvisingAssignments)
+                    .ThenInclude( aa => aa.DiplomaYearSection)
+                        .ThenInclude(dys => dys.AcademicYear)
+                            .ThenInclude(ay => ay.Semester)
+                .Include(i => i.AdvisingAssignments)
+                    .ThenInclude( aa => aa.DiplomaYearSection)
+                        .ThenInclude(dys => dys.DiplomaYear)
+                            .ThenInclude(dy => dy.Diploma)
             .FirstOrDefaultAsync(m => m.Id == id);
             if (instructor == null)
             {
