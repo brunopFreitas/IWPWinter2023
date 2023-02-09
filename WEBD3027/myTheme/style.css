@@ -1,0 +1,17 @@
+/*
+Theme Name: Portfolio
+Author: Michael Trumbull
+Description: This is a theme for a personal portfolio website.
+*/
+
+header {
+    padding: 0 0 60px 0;
+}
+
+footer {
+    padding: 50px 0 20px 0;
+}
+
+.myLinks:hover {
+    background-color: #ffc107;
+}
