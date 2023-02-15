@@ -1,0 +1,30 @@
+[import](common.lg)
+
+# SendActivity_Dej7nS()
+[Activity
+    Text = ${SendActivity_Dej7nS_text()}
+]
+
+# SendActivity_Dej7nS_text()
+- Ok. Let's check the weather.
+# TextInput_Prompt_mRXFvu()
+[Activity
+    Text = ${TextInput_Prompt_mRXFvu_text()}
+]
+
+# TextInput_Prompt_mRXFvu_text()
+- For what city?
+# SendActivity_ehq80J()
+[Activity
+    Text = ${SendActivity_ehq80J_text()}
+]
+
+# SendActivity_ehq80J_text()
+- The weather in ${user.city} is ${dialog.weather} and ${dialog.celsius}C. 
+# SendActivity_wfjYjT()
+[Activity
+    Text = ${SendActivity_wfjYjT_text()}
+]
+
+# SendActivity_wfjYjT_text()
+- The elves inside the internet commited a mistake, please try it again.
