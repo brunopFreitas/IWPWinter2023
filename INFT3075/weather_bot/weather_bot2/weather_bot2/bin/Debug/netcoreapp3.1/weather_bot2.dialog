@@ -80,7 +80,8 @@
           "activityProcessed": true,
           "dialog": "get_weather"
         }
-      ]
+      ],
+      "condition": "=#weather.Score >= 0.5"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -98,22 +99,11 @@
           "activityProcessed": true,
           "dialog": "CancelDialog"
         }
-      ]
+      ],
+      "condition": "=#Cancel.Score >= 0.8"
     }
   ],
   "generator": "weather_bot2.lg",
   "id": "weather_bot2",
-  "recognizer": {
-    "$kind": "Microsoft.RegexRecognizer",
-    "intents": [
-      {
-        "intent": "weather",
-        "pattern": "weather"
-      },
-      {
-        "intent": "Cancel",
-        "pattern": "done|bye|exit|finished|cya|thanks|cancel"
-      }
-    ]
-  }
+  "recognizer": "weather_bot2.lu.qna"
 }

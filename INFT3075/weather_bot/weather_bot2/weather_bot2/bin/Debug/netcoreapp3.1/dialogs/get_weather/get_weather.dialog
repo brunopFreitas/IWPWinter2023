@@ -40,6 +40,14 @@
           "outputFormat": "=trim(this.value)"
         },
         {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "iSHPaa"
+          },
+          "property": "user.city",
+          "value": "=trim(replace(@city, \"weather in\", \"\"))"
+        },
+        {
           "$kind": "Microsoft.HttpRequest",
           "$designer": {
             "id": "aSDWDE"

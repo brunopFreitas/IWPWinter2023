@@ -80,7 +80,8 @@
           "activityProcessed": true,
           "dialog": "get_weather"
         }
-      ]
+      ],
+      "condition": "=#weather.Score >= 0.5"
     },
     {
       "$kind": "Microsoft.OnIntent",

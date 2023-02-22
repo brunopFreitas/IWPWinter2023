@@ -1,0 +1,19 @@
+
+
+
+# Cancel
+- cancel
+- please cancel
+- i'm done
+- see you later
+- thanks, i'm done
+- bye
+- thanks, bye
+
+# weather
+- Weather
+- What's the weather today
+- Can you tell me the weather
+
+> Define a city entity. Any time LUIS sees "weather in #####", it will match.
+$ city:/(weather in )([a-zA-Z ]+)/
