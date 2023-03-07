@@ -1,29 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/home/bruno/Documents/winter2023/repo/IWPWinter2023/INFT3075/weather_bot/weather_bot2/weather_bot2/weather_bot2.csproj": {}
+    "E:\\NSCC\\Terms\\repo\\IWPWinter2023\\INFT3075\\weather_bot\\weather_bot2\\weather_bot2\\weather_bot2.csproj": {}
   },
   "projects": {
-    "/home/bruno/Documents/winter2023/repo/IWPWinter2023/INFT3075/weather_bot/weather_bot2/weather_bot2/weather_bot2.csproj": {
+    "E:\\NSCC\\Terms\\repo\\IWPWinter2023\\INFT3075\\weather_bot\\weather_bot2\\weather_bot2\\weather_bot2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/bruno/Documents/winter2023/repo/IWPWinter2023/INFT3075/weather_bot/weather_bot2/weather_bot2/weather_bot2.csproj",
+        "projectUniqueName": "E:\\NSCC\\Terms\\repo\\IWPWinter2023\\INFT3075\\weather_bot\\weather_bot2\\weather_bot2\\weather_bot2.csproj",
         "projectName": "weather_bot2",
-        "projectPath": "/home/bruno/Documents/winter2023/repo/IWPWinter2023/INFT3075/weather_bot/weather_bot2/weather_bot2/weather_bot2.csproj",
-        "packagesPath": "/home/bruno/.nuget/packages/",
-        "outputPath": "/home/bruno/Documents/winter2023/repo/IWPWinter2023/INFT3075/weather_bot/weather_bot2/weather_bot2/obj/",
+        "projectPath": "E:\\NSCC\\Terms\\repo\\IWPWinter2023\\INFT3075\\weather_bot\\weather_bot2\\weather_bot2\\weather_bot2.csproj",
+        "packagesPath": "C:\\Users\\Bruno\\.nuget\\packages\\",
+        "outputPath": "E:\\NSCC\\Terms\\repo\\IWPWinter2023\\INFT3075\\weather_bot\\weather_bot2\\weather_bot2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/bruno/.nuget/NuGet/NuGet.Config"
+          "E:\\NSCC\\Terms\\repo\\IWPWinter2023\\INFT3075\\weather_bot\\weather_bot2\\weather_bot2\\NuGet.Config",
+          "C:\\Users\\Bruno\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://botbuilder.myget.org/F/botbuilder-v4-dotnet-daily/api/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -35,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
@@ -63,7 +67,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -75,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.426/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

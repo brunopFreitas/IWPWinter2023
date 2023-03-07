@@ -3,9 +3,9 @@
   "$designer": {
     "id": "GYEcZe",
     "name": "CancelDialog",
-    "description": "Prompts the user to cancel the bot activity."
+    "description": "Prompts the user to cancel the bot activity.",
+    "comment": ""
   },
-  "autoEndDialog": true,
   "defaultResultProperty": "dialog.result",
   "triggers": [
     {
@@ -73,7 +73,11 @@
     }
   ],
   "generator": "CancelDialog.lg",
-  "recognizer": "CancelDialog.lu.qna",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": []
+  },
   "id": "CancelDialog",
-  "$Imported": "bcb51d8cca67481929d5027d9a0a303d"
+  "$Imported": "bcb51d8cca67481929d5027d9a0a303d",
+  "autoEndDialog": true
 }

@@ -4,9 +4,6 @@
     "triggers": {
       "weather": [
         "get_weather.en-us"
-      ],
-      "Cancel": [
-        "CancelDialog.en-us"
       ]
     }
   }

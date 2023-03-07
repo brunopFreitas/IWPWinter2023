@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\bruno_joke_chatbot.props" />
+</Project>

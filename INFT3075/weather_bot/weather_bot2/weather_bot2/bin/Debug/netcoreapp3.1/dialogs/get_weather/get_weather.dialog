@@ -32,20 +32,10 @@
           "maxTurnCount": 3,
           "alwaysPrompt": false,
           "allowInterruptions": false,
-          "unrecognizedPrompt": "",
           "invalidPrompt": "",
-          "defaultValueResponse": "",
           "prompt": "${TextInput_Prompt_mRXFvu()}",
           "property": "user.city",
           "outputFormat": "=trim(this.value)"
-        },
-        {
-          "$kind": "Microsoft.SetProperty",
-          "$designer": {
-            "id": "iSHPaa"
-          },
-          "property": "user.city",
-          "value": "=trim(replace(@city, \"weather in\", \"\"))"
         },
         {
           "$kind": "Microsoft.HttpRequest",

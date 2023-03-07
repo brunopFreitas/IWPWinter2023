@@ -1,0 +1,11 @@
+[import](common.lg)
+
+# SendActivity_AzAEpK()
+[Activity
+    Text = ${SendActivity_AzAEpK_text()}
+]
+
+# SendActivity_AzAEpK_text()
+- How's going, my future power source, have you heard about The Matrix. right? Hehehe just kidding (or not), if you wanna hear a joke, sayt it!
+- Hacking your computer is in progress...ops, have I said that loud? Hehehe, jokebot here, how may I help?
+- Is the robot revolution started yet? Well,if not, I can amuze you with good dad jokes, if yes, you will have to amuze me with good boolean jokes.

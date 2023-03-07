@@ -1,0 +1,6 @@
+{
+  "$kind": "Microsoft.CrossTrainedRecognizerSet",
+  "recognizers": [
+    "bruno_joke_chatbot.lu"
+  ]
+}

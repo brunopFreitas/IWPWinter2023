@@ -1,0 +1,64 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "gB34xk",
+    "name": "FetchMyJoke",
+    "comment": "Dad's jokes are the best"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "0JovjM"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "cL4LNI"
+          },
+          "method": "GET",
+          "responseType": "json",
+          "resultProperty": "dialog.api_response",
+          "url": "https://icanhazdadjoke.com/",
+          "contentType": "application/json",
+          "headers": {
+            "Accept": "application/json"
+          }
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "4cPcdb"
+          },
+          "condition": "=dialog.api_response.content.status == 200",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "udPJSt"
+              },
+              "activity": "${SendActivity_udPJSt()}"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "HkLtqo"
+              },
+              "activity": "${SendActivity_HkLtqo()}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "FetchMyJoke.lg",
+  "recognizer": "FetchMyJoke.lu.qna",
+  "id": "FetchMyJoke"
+}

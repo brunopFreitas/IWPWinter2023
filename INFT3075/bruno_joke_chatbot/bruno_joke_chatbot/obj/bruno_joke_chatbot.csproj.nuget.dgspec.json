@@ -1,0 +1,92 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\NSCC\\Terms\\repo\\IWPWinter2023\\INFT3075\\bruno_joke_chatbot\\bruno_joke_chatbot\\bruno_joke_chatbot.csproj": {}
+  },
+  "projects": {
+    "E:\\NSCC\\Terms\\repo\\IWPWinter2023\\INFT3075\\bruno_joke_chatbot\\bruno_joke_chatbot\\bruno_joke_chatbot.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\NSCC\\Terms\\repo\\IWPWinter2023\\INFT3075\\bruno_joke_chatbot\\bruno_joke_chatbot\\bruno_joke_chatbot.csproj",
+        "projectName": "bruno_joke_chatbot",
+        "projectPath": "E:\\NSCC\\Terms\\repo\\IWPWinter2023\\INFT3075\\bruno_joke_chatbot\\bruno_joke_chatbot\\bruno_joke_chatbot.csproj",
+        "packagesPath": "C:\\Users\\Bruno\\.nuget\\packages\\",
+        "outputPath": "E:\\NSCC\\Terms\\repo\\IWPWinter2023\\INFT3075\\bruno_joke_chatbot\\bruno_joke_chatbot\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "E:\\NSCC\\Terms\\repo\\IWPWinter2023\\INFT3075\\bruno_joke_chatbot\\bruno_joke_chatbot\\NuGet.Config",
+          "C:\\Users\\Bruno\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://botbuilder.myget.org/F/botbuilder-v4-dotnet-daily/api/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.Bot.Builder.AI.Luis": {
+              "target": "Package",
+              "version": "[4.18.1, )"
+            },
+            "Microsoft.Bot.Builder.AI.QnA": {
+              "target": "Package",
+              "version": "[4.18.1, )"
+            },
+            "Microsoft.Bot.Builder.Dialogs.Adaptive.Runtime": {
+              "target": "Package",
+              "version": "[4.18.1, )"
+            },
+            "Microsoft.Bot.Components.HelpAndCancel": {
+              "target": "Package",
+              "version": "[1.3.0, )"
+            },
+            "Microsoft.Bot.Components.Welcome": {
+              "target": "Package",
+              "version": "[1.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+[import](common.lg)
+
+# SendActivity_udPJSt()
+[Activity
+    Text = ${SendActivity_udPJSt_text()}
+    Attachments = ${SendActivity_udPJSt_attachment_pSezEq()}
+]
+
+# SendActivity_udPJSt_text()
+- Ok, here we go.
+# SendActivity_HkLtqo()
+[Activity
+    Text = ${SendActivity_HkLtqo_text()}
+]
+
+# SendActivity_HkLtqo_text()
+- Hmmmm, sorry, I'm not in the mood today...can't remember any joke...the source from where I pull my jokes is not available right now.
+# SendActivity_udPJSt_attachment_pSezEq()
+[HeroCard
+  title = A coold dad joke
+  text = ${dialog.api_response.content.joke}
+  images = https://icanhazdadjoke.com/static/smile.svg
+]
+
