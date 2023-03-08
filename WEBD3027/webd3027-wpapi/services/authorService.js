@@ -1,7 +1,7 @@
 var WPAPI = require('wpapi');
 var wp = new WPAPI({
     endpoint: 'http://a1.w0448225.ca/wp-json',
-    username: 'bruno',
+    username: 'legolas',
     password: 'root'
   });
 
@@ -9,14 +9,12 @@ module.exports = {
     async fillMyPostList () {
         let posts = [];  
         try {  
-            const postData = await wp.posts();
+            const postData = await wp.posts().perPage(10).order('desc').embed();
             for await (const post of postData) {
                 let title = post.title.rendered
                 let excerpt = post.excerpt.rendered
-                let authorData = await wp.users().id(post.author)
-                let author = authorData.name
-                let mediaData = await wp.media().id(post.featured_media)
-                let media = mediaData.source_url
+                let author = post._embedded.author[0].name
+                let media = post._embedded["wp:featuredmedia"][0].source_url
                 posts.push(
                     {
                         featured_media: media,
@@ -27,20 +25,29 @@ module.exports = {
                     );
                 
             } 
-        //     postData.forEach(function (item) {
-                // posts.push(
-                // {
-                //     featured_media: item.featured_media,
-                //     title: item.title.rendered,
-                //     author: item.author,
-                //     excerpt: item.excerpt.rendered
-                // }
-                // );
-        //   });
-
         } catch (error) {
             console.log(error)
         }
         return posts
+    },
+
+    createNewPost (newPostObject) {
+        let newPost = wp.media().file(newPostObject.featuredMediaBuffer, newPostObject.featuredMediaTitle).create({
+            title: newPostObject.featuredMediaTitle
+        }).then(media => {
+                return wp.posts().create({
+                title: newPostObject.title,
+                content: newPostObject.content,
+                featured_media: media.id,
+                categories: [newPostObject.category],
+                status: 'publish'
+            })
+        })
+        return newPost
+    },
+
+    async getCategory () {
+        let categories = await wp.categories()
+        return categories
     }
 }
