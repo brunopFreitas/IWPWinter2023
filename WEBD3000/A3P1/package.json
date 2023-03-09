@@ -1,0 +1,13 @@
+{
+  "name": "a3p1",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "mssql": "^9.1.1"
+  }
+}
