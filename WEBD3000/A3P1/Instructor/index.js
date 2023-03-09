@@ -6,14 +6,16 @@ module.exports = async function (context, req) {
     if(req.query.id) {
         const id_parameter = (req.query.id);
         let result = await DB.fetchMyInstructorData(id_parameter)        
+        let httpStatus = DB.analyzeMyReturn(result)        
         context.res = {
-            // status: 200, /* Defaults to 200 */
+            status: httpStatus,
             body: result
         };
     } else {
         let result = await DB.fetchMyInstructorData("")
+        let httpStatus = DB.analyzeMyReturn(result)        
         context.res = {
-        // status: 200, /* Defaults to 200 */
+            status: httpStatus,
             body: result
         };
     }

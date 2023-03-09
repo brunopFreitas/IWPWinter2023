@@ -20,7 +20,10 @@ module.exports = {
                 DB.closeTheConnection(DBOn)
                 const result = []
                 result.push({
-                    "course": course.recordsets, "courseIsPrerequisiteFor": coursePrerequisites.recordsets, "courseHasPreRequisites": courseHasPreRequisites.recordsets
+                    "course": course.recordsets, 
+                    "courseIsPrerequisiteFor": coursePrerequisites.recordsets, 
+                    "courseHasPreRequisites": courseHasPreRequisites.recordsets,
+                    "rowsAffected": course.rowsAffected[0]
                 })
                 return result
             } catch (err) {
@@ -39,6 +42,7 @@ module.exports = {
             }
         }
     },
+
     async fetchMyAcademicYearData (id_parameter) {
         if(id_parameter!=="") {
             try {
@@ -64,7 +68,10 @@ module.exports = {
                 DB.closeTheConnection(DBOn)
                 const result = []
                 result.push({
-                    "academicYear": academicYear.recordsets, "academicYearSemesters": academicYearSemester.recordsets, "academicYearAdvisingAssignment": advisingAssignment.recordsets
+                    "academicYear": academicYear.recordsets, 
+                    "academicYearSemesters": academicYearSemester.recordsets, 
+                    "academicYearAdvisingAssignment": advisingAssignment.recordsets,
+                    "rowsAffected": academicYear.rowsAffected[0]
                 })
                 return result
             } catch (err) {
@@ -103,7 +110,9 @@ module.exports = {
                 DB.closeTheConnection(DBOn)
                 const result = []
                 result.push({
-                    "diploma": diploma.recordsets, "diplomaAdvisors": diplomaAdvisor.recordsets
+                    "diploma": diploma.recordsets, 
+                    "diplomaAdvisors": diplomaAdvisor.recordsets,
+                    "rowsAffected": diploma.rowsAffected[0]
                 })
                 return result
             } catch (err) {
@@ -154,7 +163,10 @@ module.exports = {
                 DB.closeTheConnection(DBOn)
                 const result = []
                 result.push({
-                    "instructor": instructor.recordsets, "AdvisingAssignments": AdvisingAssignments.recordsets, "CoursesTaught": CoursesTaught.recordsets
+                    "instructor": instructor.recordsets, 
+                    "AdvisingAssignments": AdvisingAssignments.recordsets, 
+                    "CoursesTaught": CoursesTaught.recordsets,
+                    "rowsAffected": instructor.rowsAffected[0]
                 })
                 return result
             } catch (err) {
@@ -173,8 +185,14 @@ module.exports = {
                 console.log(err)
             }
         }
+    },
+
+    analyzeMyReturn (result) {
+        if(result[0].rowsAffected!=0){
+            return 200
+        } else {
+            return 404
+        }
     }
-
-
 }
 
