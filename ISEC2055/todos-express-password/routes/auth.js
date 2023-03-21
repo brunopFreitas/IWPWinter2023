@@ -3,7 +3,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local');
 var crypto = require('crypto');
 var db = require('../db');
-
+var validateMyPassword = require('../service/passwordValidator')
 
 /* Configure password authentication strategy.
  *
@@ -61,19 +61,29 @@ passport.deserializeUser(function(user, cb) {
 
 var router = express.Router();
 
-/* GET /login
+/** GET /login
  *
  * This route prompts the user to log in.
  *
  * The 'login' view renders an HTML form, into which the user enters their
  * username and password.  When the user submits the form, a request will be
  * sent to the `POST /login/password` route.
+ *
+ * @openapi
+ * /login:
+ *   get:
+ *     summary: Prompt the user to log in using a username and password
+ *     responses:
+ *       "200":
+ *         description: Prompt.
+ *         content:
+ *           text/html:
  */
 router.get('/login', function(req, res, next) {
   res.render('login');
 });
 
-/* POST /login/password
+/** POST /login/password
  *
  * This route authenticates the user by verifying a username and password.
  *
@@ -88,6 +98,24 @@ router.get('/login', function(req, res, next) {
  *
  * When authentication fails, the user will be re-prompted to login and shown
  * a message informing them of what went wrong.
+ *
+ * @openapi
+ * /login/password:
+ *   post:
+ *     summary: Log in using a username and password
+ *     requestBody:
+ *       content:
+ *         application/x-www-form-urlencoded:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               username:
+ *                 type: string
+ *               password:
+ *                 type: number
+ *     responses:
+ *       "302":
+ *         description: Redirect.
  */
 router.post('/login/password', passport.authenticate('local', {
   successReturnToOrRedirect: '/',
@@ -128,6 +156,7 @@ router.get('/signup', function(req, res, next) {
  * successfully created, the user is logged in.
  */
 router.post('/signup', function(req, res, next) {
+  console.log(validateMyPassword(req.body.password))
   var salt = crypto.randomBytes(16);
   crypto.pbkdf2(req.body.password, salt, 310000, 32, 'sha256', function(err, hashedPassword) {
     if (err) { return next(err); }
