@@ -63,7 +63,7 @@ module.exports = {
                 INNER JOIN AdvisingAssignments aa on aa.DiplomaYearSectionId  = dys.Id
                 INNER JOIN Instructors i on aa.InstructorId = i.Id
                 INNER JOIN AcademicYears ay on dys.AcademicYearId = ay.Id
-                WHERE ay.Id = 1
+                WHERE ay.Id = ${id_parameter}
                 ORDER BY d.Title, dy.Title, dys.Title`
                 DB.closeTheConnection(DBOn)
                 const result = []
@@ -152,13 +152,13 @@ module.exports = {
                 INNER JOIN AdvisingAssignments aa on aa.DiplomaYearSectionId  = dys.Id
                 INNER JOIN Instructors i on aa.InstructorId = i.Id
                 INNER JOIN AcademicYears ay on dys.AcademicYearId = ay.Id
-                WHERE i.Id = 4
+                WHERE i.Id = ${id_parameter}
                 ORDER BY ay.Title DESC, d.Title ASC, dy.Title ASC, dys.Title ASC`
                 const CoursesTaught = await DBOn.query `SELECT DISTINCT c.id, c.title, c.CourseCode
                 FROM Courses c
                 INNER JOIN CourseOfferings co on c.Id = co.CourseId
                 INNER JOIN Instructors i on co.InstructorId = i.Id
-                WHERE i.Id = 4
+                WHERE i.Id = ${id_parameter}
                 ORDER BY c.CourseCode ASC`
                 DB.closeTheConnection(DBOn)
                 const result = []
