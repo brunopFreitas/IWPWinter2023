@@ -30,7 +30,7 @@ const CoursesList: React.FC = () => {
                   detail 
                   key={Courses.Id}
                   routerLink={ `/Courses/${Courses.Id}` }>
-                <IonLabel>{Courses.CourseCode} { - Courses.Title}</IonLabel>
+                <IonLabel>{Courses.CourseCode} {" - " + Courses.Title}</IonLabel>
               </IonItem>
           )
         })

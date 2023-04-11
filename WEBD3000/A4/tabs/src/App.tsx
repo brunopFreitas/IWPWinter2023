@@ -13,8 +13,8 @@ import { IonReactRouter } from '@ionic/react-router';
 import { calendarOutline, bookOutline, schoolOutline, peopleOutline  } from 'ionicons/icons';
 import AcademicYears from './pages/AcademicYears';
 import Courses from './pages/Courses';
-import Tab3 from './pages/Tab3';
-import Tab4 from './pages/Tab4';
+import Diplomas from './pages/Diplomas';
+import Tab4 from './pages/Instructors';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -48,8 +48,8 @@ const App: React.FC = () => (
           <Route exact path="/Courses">
             <Courses />
           </Route>
-          <Route path="/tab3">
-            <Tab3 />
+          <Route path="/Diplomas">
+            <Diplomas />
           </Route>
           <Route path="/tab4">
             <Tab4 />
@@ -67,7 +67,7 @@ const App: React.FC = () => (
             <IonIcon aria-hidden="true" icon={bookOutline} />
             <IonLabel>Courses</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
+          <IonTabButton tab="Diplomas" href="/Diplomas">
             <IonIcon aria-hidden="true" icon={schoolOutline} />
             <IonLabel>Diplomas</IonLabel>
           </IonTabButton>
