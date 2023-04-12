@@ -14,7 +14,11 @@ import { calendarOutline, bookOutline, schoolOutline, peopleOutline  } from 'ion
 import AcademicYears from './pages/AcademicYears';
 import Courses from './pages/Courses';
 import Diplomas from './pages/Diplomas';
-import Tab4 from './pages/Instructors';
+import Instructors from './pages/Instructors';
+import AcademicYearsDetails from './pages/AcademicYearsDetails';
+import CoursesDetails from './pages/CoursesDetails';
+import DiplomasDetails from './pages/DiplomasDetails';
+import InstructorsDetails from './pages/InstructorsDetails';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -45,15 +49,20 @@ const App: React.FC = () => (
           <Route exact path="/AcademicYears">
             <AcademicYears />
           </Route>
+          <Route exact path="/AcademicYears/:id" component={AcademicYearsDetails} />
           <Route exact path="/Courses">
             <Courses />
           </Route>
+          <Route exact path="/Courses/:id" component={CoursesDetails} />
           <Route path="/Diplomas">
             <Diplomas />
           </Route>
-          <Route path="/tab4">
-            <Tab4 />
+          <Route path="/Diplomas/:id" component={DiplomasDetails} />
+          <Route path="/Instructors">
+            <Instructors />
           </Route>
+          <Route path="/Instructors/:id" component={InstructorsDetails} />
+          <Route path="/Instructors/Courses/:id" component={CoursesDetails} />
           <Route exact path="/">
             <Redirect to="/AcademicYears" />
           </Route>
@@ -71,7 +80,7 @@ const App: React.FC = () => (
             <IonIcon aria-hidden="true" icon={schoolOutline} />
             <IonLabel>Diplomas</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab4" href="/tab4">
+          <IonTabButton tab="Instructors" href="/Instructors">
             <IonIcon aria-hidden="true" icon={peopleOutline} />
             <IonLabel>Instructors</IonLabel>
           </IonTabButton>

@@ -1,5 +1,5 @@
-import { IonItem, IonLabel, IonList } from '@ionic/react';
-import { useEffect, useState } from 'react';
+import { IonInput, IonItem, IonLabel, IonList } from '@ionic/react';
+import { SetStateAction, useEffect, useState } from 'react';
 import './CoursesList.css';
 import axios from 'axios';
 
@@ -13,6 +13,16 @@ const CoursesList: React.FC = () => {
 
   const [Courses, setCourses] = useState<CoursesListItem[]>([]);
 
+  const [searchText, setSearchText] = useState('');
+
+  const handleSearchTextChange = (event: CustomEvent) => {
+    setSearchText(event.detail.value!);
+  };
+
+  const filteredData = Courses.filter((item) =>
+  item.Title.toLowerCase().includes(searchText.toLowerCase())
+);
+
   useEffect(() => {
     (async () => {
       const response = await axios.get(`https://webd3000-w0448225-function-app.azurewebsites.net/api/course`)
@@ -21,21 +31,25 @@ const CoursesList: React.FC = () => {
   }, [])
 
   return (
-    <IonList>
-      {
-        Courses.map(Courses => {
-          return (
-              <IonItem 
+    <>
+      <IonInput
+        type="text"
+        value={searchText}
+        placeholder="Search by Course Name"
+        onIonChange={handleSearchTextChange}
+      />
+      <IonList>
+        {filteredData.map((item) => (
+          <IonItem 
                   button 
                   detail 
-                  key={Courses.Id}
-                  routerLink={ `/Courses/${Courses.Id}` }>
-                <IonLabel>{Courses.CourseCode} {" - " + Courses.Title}</IonLabel>
+                  key={item.Id}
+                  routerLink={ `/Courses/${item.Id}` }>
+                <IonLabel>{item.CourseCode} {" - " + item.Title}</IonLabel>
               </IonItem>
-          )
-        })
-      }
-    </IonList>
+        ))}
+      </IonList>
+    </>
   );
 };
 
